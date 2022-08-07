@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap");
+      #dayNumber {
+        font-size: 300px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Raleway", sans-serif;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="dayNumber"></div>
+  </body>
+  <script>
+    let date_1 = new Date("08/01/2022");
+    let date_2 = new Date();
+
+    const days = (date_1, date_2) => {
+      let difference = date_1.getTime() - date_2.getTime();
+      let TotalDays = Math.ceil(difference / (1000 * 3600 * 24));
+      return TotalDays;
+    };
+    document.getElementById("dayNumber").innerHTML =
+      "DAY " + days(date_2, date_1);
+  </script>
+</html>
